@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+!$stakeholder = "<stakeholder>"
+!$painpoint = "<pain point>"
+
+!$actor = "<user>"
+!$behavior = "<behavior>"
+!$rationale = "<rationale>"
+
+object stakeholderconcern1 {
+    As a $stakeholder
+    I experience $painpoint
+}
+
+object userstory1 {
+    As a $actor
+    I want $behavior
+    so that $rationale
+}
+
+stakeholderconcern1 <.. userstory1 : <<trace>>
+@enduml
