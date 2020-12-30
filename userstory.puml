@@ -15,8 +15,8 @@ object stakeholderconcern1 {
 
 object userstory1 {
     As a $actor
-    I want $behavior
-    so that $rationale
+    I want to $behavior
+    so that I can $rationale
 }
 
 stakeholderconcern1 <.. userstory1 : <<trace>>
