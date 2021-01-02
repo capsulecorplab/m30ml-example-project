@@ -18,6 +18,7 @@ object userstory1 {
     I want to $behavior
     so that I can $rationale
 }
+note bottom of userstory1 : <b>Example:</b> $behavior using some standard
 
 stakeholderconcern1 <.. userstory1 : <<trace>>
 @enduml
