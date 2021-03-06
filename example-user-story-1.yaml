@@ -1,0 +1,8 @@
+id: 1
+name: "Version Control (Example 1)"
+actor: "kernel lead developer"
+behavior: "specify changes in content to be tracked in a local history"
+rationale: "revert changes in the future, if need be"
+derivedFrom: 
+- "example-stakeholder-need.yaml"
+example: "."
