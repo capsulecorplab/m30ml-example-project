@@ -1,7 +1,7 @@
 id: 2
 name: "Version Control (Example 2)"
-actor: "kernel lead developer"
-behavior: "specify changes to content to be tracked with a shared history"
+actor: "kernel developer"
+behavior: "commit changes to content in a file system as a directed acyclic graph data structure"
 rationale: "work in parallel with other team members"
 derivedFrom: 
 - "example-stakeholder-need.yaml"
