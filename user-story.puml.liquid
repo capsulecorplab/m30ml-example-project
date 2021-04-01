@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+rectangle "{{name}}" as userstory <<user story>> {
+  actor "{{actor}}" as role
+
+  usecase "{{behavior}}" as behavior
+  note top of behavior : {{example}}
+
+  usecase "{{rationale}}" as rationale
+
+  role --> behavior : wants to
+  behavior +.. rationale : so that he/she/they can
+}
+
+@enduml
