@@ -1,0 +1,25 @@
+= m30ml-to-PlantUML Liquid Templates =
+
+Liquid templates and example data for generating https://plantuml.com[PlantUML] diagrams, using the Mach 30 Modeling Language (https://github.com/Mach30/m30ml[m30ml]). 
+
+== Installation & Usage ==
+
+This project uses https://github.com/DocOps/liquidoc-gem[LiquiDoc] - a build tool for the https://shopify.github.io/liquid[Liquid] template language.
+
+=== Using Bundler ===
+
+Refer to the https://github.com/DocOps/liquidoc-gem#installation[LiquiDoc Installation] guide for installing LiquiDoc as a RubyGems, then run the following bundler command:
+
+[source, shell]
+----
+bundle exec liquidoc -d example-user-story-1.yml -t user-story.puml.liquid -o user-story-1.puml
+----
+
+=== Using Docker ===
+
+Alternatively, you can run the following docker command:
+
+[source, shell]
+----
+docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'bundle exec liquidoc -d example-user-story-1.yml -t user-story.puml.liquid -o user-story-1.puml'
+----
