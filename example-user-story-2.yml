@@ -4,5 +4,5 @@ actor: "kernel developer"
 behavior: "commit changes to content in a file system as a directed acyclic graph data structure"
 rationale: "work in parallel with other team members"
 derivedFrom: 
-- "example-stakeholder-need.yaml"
+- "example-stakeholder-need.yml"
 example: "."
