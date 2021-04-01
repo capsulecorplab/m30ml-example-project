@@ -12,7 +12,7 @@ Refer to the https://github.com/DocOps/liquidoc-gem#installation[LiquiDoc Instal
 
 [source, shell]
 ----
-bundle exec liquidoc -d example-user-story-1.yml -t user-story.puml.liquid -o user-story-1.puml
+bundle exec liquidoc -d data/example-user-story-1.yml -t templates/user-story.puml.liquid -o artifacts/user-story-1.puml
 ----
 
 === Using Docker ===
@@ -21,5 +21,5 @@ Alternatively, you can run the following docker command:
 
 [source, shell]
 ----
-docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'bundle exec liquidoc -d example-user-story-1.yml -t user-story.puml.liquid -o user-story-1.puml'
+docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'bundle exec liquidoc -d data/example-user-story-1.yml -t templates/user-story.puml.liquid -o artifacts/user-story-1.puml'
 ----

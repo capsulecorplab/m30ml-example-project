@@ -3,3 +3,6 @@
 
 # bundler
 _build/
+
+# LiquiDoc
+artifacts/
