@@ -1,5 +1,5 @@
 {
-    "name": "Linux Kernel DevOps Architecture",
+    "name": "LinuxKernelDevOpsArchitecture",
     "version": "0.1.0",
     "description": "The DevOps needs of the Linux kernel (circa 2005), modeled in the Mach30 Modeling Language (m30ml)",
     "keywords": [
