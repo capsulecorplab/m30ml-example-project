@@ -4,8 +4,8 @@
 # bundler
 _build/
 
-# LiquiDoc
-artifacts/
+# m30ml
+dist/
 
 # npm
 node_modules/
