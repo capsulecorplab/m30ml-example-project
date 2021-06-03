@@ -6,3 +6,6 @@ _build/
 
 # LiquiDoc
 artifacts/
+
+# npm
+node_modules/
