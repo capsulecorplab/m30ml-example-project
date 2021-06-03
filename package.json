@@ -1,0 +1,17 @@
+{
+    "name": "Linux Kernel DevOps Architecture",
+    "version": "0.1.0",
+    "description": "The DevOps needs of the Linux kernel (circa 2005), modeled in the Mach30 Modeling Language (m30ml)",
+    "keywords": [
+        "docops"
+    ],
+    "repository": "https://github.com/capsulecorplab/m30ml-liquid-templates.git",
+    "homepage": "https://m30ml-liquid-templates.github.io",
+    "author": "Sean Marquez <capsulecorplab@gmail.com>",
+    "license": "CC-BY-4.0",
+    "dependencies": {
+        "js-yaml": "^3.12.0",
+        "liquidjs": "^6.1.1",
+        "minimist": "^1.2.0"
+    }
+}
