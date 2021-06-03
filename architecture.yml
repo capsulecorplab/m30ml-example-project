@@ -1,0 +1,48 @@
+elements:
+  1-StakeholderNeeds/1-DistributedDevelopment.yml: &ref_0
+    id: 1
+    name: Distributed Development
+    statement: The linux kernel should be developed & maintained by a distributed team.
+    derivedFrom: []
+  2-UserStories/1-RevertChanges.yml: &ref_1
+    id: 1
+    name: Revert Changes
+    actor: kernel developer
+    behavior: revert to a prior state or version of the linux kernel project
+    rationale: undo a breaking change
+    derivedFrom:
+      - 1-StakeholderNeeds/1-Linux-Kernel-Distributed-Development.yml
+    example: revert changes to load balancer in completely fair scheduler
+  2-UserStories/2-Branching.yml: &ref_2
+    id: 2
+    name: Branching
+    actor: kernel developer
+    behavior: create a new branch to commit changes to
+    rationale: >-
+      develop features or bug fixes to linux kernel without breaking production
+      code
+    derivedFrom:
+      - 1-StakeholderNeeds/1-Linux-Kernel-Distributed-Development.yml.yml
+    example: create a feature branch for implementing CFS runque as rbtree
+package:
+  name: LinuxKernelDevOpsArchitecture
+  version: 0.1.0
+  description: >-
+    The DevOps needs of the Linux kernel (circa 2005), modeled in the Mach30
+    Modeling Language (m30ml)
+  keywords:
+    - docops
+  repository: 'https://github.com/capsulecorplab/m30ml-liquid-templates.git'
+  homepage: 'https://m30ml-liquid-templates.github.io'
+  author: Sean Marquez <capsulecorplab@gmail.com>
+  license: CC-BY-4.0
+  dependencies:
+    js-yaml: ^3.12.0
+    liquidjs: ^6.1.1
+    minimist: ^1.2.0
+generationDate: 6/3/2021
+1-StakeholderNeeds:
+  - *ref_0
+2-UserStories:
+  - *ref_1
+  - *ref_2

@@ -1,0 +1,40 @@
+= LinuxKernelDevOpsArchitecture
+The DevOps needs of the Linux kernel (circa 2005), modeled in the Mach30 Modeling Language (m30ml)
+:revnumber: v0.1.0
+:toc: left
+
+== Stakeholder Needs
+ 
+LinuxKernelDevOpsArchitecture is guided by a series of stakeholder needs, listed below.
+
+
+.Stakeholder Need 1: Distributed Development
+****
+The linux kernel should be developed & maintained by a distributed team.
+**** 
+
+
+== User Stories
+
+LinuxKernelDevOpsArchitecture's stakeholder needs are then used to identify a series of user stories which then lead to design decisions captured in data structure and activity definitions.
+
+
+=== User Story 1: Revert Changes
+
+****
+As a *kernel developer* I want to *revert to a prior state or version of the linux kernel project* so that I can *undo a breaking change*.
+****
+
+*Example:* revert changes to load balancer in completely fair scheduler
+
+
+=== User Story 2: Branching
+
+****
+As a *kernel developer* I want to *create a new branch to commit changes to* so that I can *develop features or bug fixes to linux kernel without breaking production code*.
+****
+
+*Example:* create a feature branch for implementing CFS runque as rbtree
+
+
+
