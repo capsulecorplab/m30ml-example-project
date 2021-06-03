@@ -21,3 +21,6 @@ mv dist/architecture.yaml dist/architecture.yml
 
 # generate contents of architecture.adoc
 docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'bundle exec liquidoc -d dist/architecture.yml -t templates/architecture.adoc.liquid -o dist/architecture.adoc'
+
+# generate html & pdf docs using asciidoctor
+docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'asciidoctor dist/architecture.adoc -r asciidoctor-diagram -o dist/index.html'
