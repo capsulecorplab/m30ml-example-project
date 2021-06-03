@@ -1,25 +1,218 @@
-= m30ml Liquid Templates =
+= m30ml example project =
 
-Liquid templates and example data for generating documents, s.a., https://plantuml.com[PlantUML] diagrams, for data specified in the Mach 30 Modeling Language (https://github.com/Mach30/m30ml[m30ml]). 
+An example project for modeling stakeholder needs, user stories, data structures, using the Mach 30 Modeling Language (https://github.com/Mach30/m30ml[m30ml]). 
 
-== Installation & Usage ==
+The output of this project is a documentation page that can be accessed at https://capsulecorplab.github.io/m30ml-example-project/
 
-This project uses https://github.com/DocOps/liquidoc-gem[LiquiDoc] - a build tool for the https://shopify.github.io/liquid[Liquid] template language.
+== Installation ==
 
-=== Using Bundler ===
+This project currently uses https://docs.docker.com/get-docker/[docker] for abstracting build tools, s.a., https://github.com/DocOps/liquidoc-gem[LiquiDoc] - a build tool for the https://shopify.github.io/liquid[Liquid] template language, and https://asciidoctor.org/[Asciidoctor] - a conversion engine for the https://asciidoctor.org/docs/what-is-asciidoc/[Asciidoc] markup language.
 
-Refer to the https://github.com/DocOps/liquidoc-gem#installation[LiquiDoc Installation] guide for installing LiquiDoc as a RubyGems, then run the following bundler command:
+== Architecture ==
+
+Contents of the `architecture/` directory are specified in the following https://yaml.org/[YAML]-based data structures, as per the https://github.com/Mach30/m30ml[m30ml] language specification, to serve as the "single source of truth" for a project.
+
+==== Reference ====
+
+*Purpose:* Provide data required to cite sources
+
+.Reference Template
+----
+title: {{title}}
+url: {{url}}
+
+----
+
+.Reference Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+|title
+|string
+|
+|title of the reference
+| 
+
+|url
+|string
+|
+|For web based references, URL needed to access the reference
+| 
+
+|===
+
+
+==== Stakeholder Need ====
+
+*Purpose:* Capture statements of need from the perspective of system stakeholders identifying the system to be developed.  Stakeholder needs do not need to be strictly testable.  Later analysis will develop verifiable requirements from the stakeholder needs.
+
+.Stakeholder Need Template
+----
+id: {{id}}
+name: {{name}}
+statement: {{statement}}
+derivedFrom: {{derivedFrom}}
+
+----
+
+.Stakeholder Need Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+|id
+|integer
+|
+|Auto-increment identification number for the Stakeholder Need
+| 
+
+|name
+|string
+|
+|Human readable (descriptive) name for the Stakeholder Need
+| 
+
+|statement
+|string
+|
+|The actual statement of the Stakeholder Need
+| 
+
+|derivedFrom
+|list
+|string
+|List of paths to model files that this Stakeholder Need is related to by analysis results and design decisions
+| 
+
+|===
+
+.References
+
+* https://www.sebokwiki.org/wiki/Stakeholder_Needs_and_Requirements[Stakeholder Needs and Requirements]
+
+
+==== User Story
+*Purpose:* Define unit of capability serving a specific user persona's need.
+
+.User Story Template
+----
+id: {{id}}
+name: {{name}}
+actor: {{actor}}
+behavior: {{behavior}}
+rationale: {{rationale}}
+derivedFrom: {{derivedFrom}}
+example: {{example}}
+
+----
+
+.User Story Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+|id
+|integer
+|
+|Auto-increment identification number for the User Story
+| 
+
+|name
+|string
+|
+|Human readable (descriptive) name for the User Story
+| 
+
+|actor
+|string
+|
+|Identifies the subject of the user story (the end user), e.g. "As a <actor>, I ..."
+| 
+
+|behavior
+|string
+|
+|Defines the objective of the user story in an implementation free manner (the intent), e.g. "want to <behavior> ..."
+| 
+
+|rationale
+|string
+|
+|Identifies why the actor desires the behavior (the benefit/value for the user), e.g. "so that I can <rationale>."
+| 
+
+|example
+|string
+|
+|One to two sentences describing an application of this user story
+| 
+
+|===
+
+
+.References
+
+* https://www.yodiz.com/blog/writing-user-stories-examples-and-templates-in-agile-methodologies/[Writing User Stories, Examples and Templates In Agile Methodologies]
+
+* https://www.atlassian.com/agile/project-management/user-stories[User Stories]
+
+* http://www.payton-consulting.com/write-user-story/[How to Write a User Story]
+
+
+==== Data Structure
+*Purpose:* Define storage format for data used in an architecture
+
+.Data Structure Template
+----
+name: {{name}}
+purpose: {{purpose}}
+template: |
+  {{template}}
+elements: 
+  - {{element}}
+derivedFrom: {{derivedFrom}}
+
+----
+
+.Data Structure Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+|name
+|string
+|
+|Human readable name of the Data Structure
+| 
+
+|purpose
+|string
+|
+|Provides specification for an individual Data Structure
+| 
+
+|template
+|string
+|
+|Liquid template of YAML representation of the data structure, suitable for use in manual or automated generation of the data structure
+| 
+
+|elements
+|list
+|Element
+|Definition of the data in the Data Structure
+| 
+
+|derivedFrom
+|list
+|string
+|List of paths to model files that this Data Structure is related to by analysis results and design decisions
+| 
+
+|===
+
+=== Usage ===
+
+Run the following build script to locally generate the build artifacts (in this case, the static docs page):
 
 [source, shell]
 ----
-bundle exec liquidoc -d data/example-user-story-1.yml -t templates/user-story.puml.liquid -o dist/user-story-1.puml
-----
-
-=== Using Docker ===
-
-Alternatively, you can run the following docker command:
-
-[source, shell]
-----
-docker run --rm --volume $PWD:/src -w "/src" capsulecorplab/asciidoctor-extended:liquidoc 'bundle exec liquidoc -d data/example-user-story-1.yml -t templates/user-story.puml.liquid -o dist/user-story-1.puml'
+./makeViews.sh
 ----
