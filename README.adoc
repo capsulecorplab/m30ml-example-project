@@ -1,6 +1,6 @@
-= m30ml-to-PlantUML Liquid Templates =
+= m30ml Liquid Templates =
 
-Liquid templates and example data for generating https://plantuml.com[PlantUML] diagrams, using the Mach 30 Modeling Language (https://github.com/Mach30/m30ml[m30ml]). 
+Liquid templates and example data for generating documents, s.a., https://plantuml.com[PlantUML] diagrams, for data specified in the Mach 30 Modeling Language (https://github.com/Mach30/m30ml[m30ml]). 
 
 == Installation & Usage ==
 
