@@ -1,0 +1,8 @@
+id: 1
+name: "Revert Changes"
+actor: "kernel developer"
+behavior: "revert to a prior state or version of the linux kernel project"
+rationale: "undo a breaking change"
+derivedFrom: 
+- "1-StakeholderNeeds/1-Linux-Kernel-Distributed-Development.yml"
+example: "revert changes to load balancer in completely fair scheduler"

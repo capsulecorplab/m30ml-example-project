@@ -1,0 +1,4 @@
+id: 1
+name: "Distributed Development"
+statement: "The linux kernel should be developed & maintained by a distributed team."
+derivedFrom: []

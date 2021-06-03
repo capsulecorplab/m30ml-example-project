@@ -1,4 +1,0 @@
-id: 1
-name: "Linux Kernel Development"
-statement: "Linux kernel development should allow for multiple contributions without losing track of state of the linux kernel."
-derivedFrom: []

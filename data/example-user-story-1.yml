@@ -1,8 +1,0 @@
-id: 1
-name: "Version Control (Example 1)"
-actor: "kernel developer"
-behavior: "commit changes to content in a file system as a directed acyclic graph data structure"
-rationale: "revert changes in the future, if need be"
-derivedFrom: 
-- "example-stakeholder-need.yml"
-example: "."

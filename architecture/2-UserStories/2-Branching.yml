@@ -1,0 +1,8 @@
+id: 2
+name: "Branching"
+actor: "kernel developer"
+behavior: "create a new branch to commit changes to"
+rationale: "develop features or bug fixes to linux kernel without breaking production code"
+derivedFrom: 
+- "1-StakeholderNeeds/1-Linux-Kernel-Distributed-Development.yml.yml"
+example: "create a feature branch for implementing CFS runque as rbtree"
